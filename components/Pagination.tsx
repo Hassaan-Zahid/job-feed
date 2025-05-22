@@ -2,11 +2,11 @@
 
 import { Button } from './ui/button'
 import { useDispatch, useSelector } from 'react-redux'
-import { RootState } from '@/lib/redux/store'
+import {AppDispatch, RootState} from '@/lib/redux/store'
 import { fetchJobs } from '@/lib/redux/slices/jobsSlice'
 
 export function Pagination() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch<AppDispatch>();
     const { currentPage, jobsPerPage, totalJobs, loading } = useSelector(
         (state: RootState) => state.jobs
     )

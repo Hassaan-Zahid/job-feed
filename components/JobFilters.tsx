@@ -17,10 +17,10 @@ import {
     clearFilters,
     fetchFilters,
 } from '@/lib/redux/slices/jobsSlice'
-import { RootState } from '@/lib/redux/store'
+import {AppDispatch, RootState} from '@/lib/redux/store'
 
 export function JobFilters() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch<AppDispatch>();
     const { filters, categories, jobTypes } = useSelector((state: RootState) => state.jobs)
 
     useEffect(() => {

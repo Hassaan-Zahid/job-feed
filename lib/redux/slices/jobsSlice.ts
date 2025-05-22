@@ -112,7 +112,7 @@ const jobsSlice = createSlice({
                 state.loading = false
                 state.error = null
 
-                const newJobs = payload.jobs.filter(job => !state.allJobs.some(j => j.id === job.id))
+                const newJobs = payload.jobs.filter((job: { id: number }) => !state.allJobs.some(j => j.id === job.id))
                 state.allJobs = payload.isNewSearch ? payload.jobs : [...state.allJobs, ...newJobs]
 
                 state.filteredJobs = applyFilters(state)

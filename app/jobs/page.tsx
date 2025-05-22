@@ -7,9 +7,10 @@ import { JobFilters } from '@/components/JobFilters'
 import { JobList } from '@/components/JobList'
 import { Navbar } from '@/components/Navbar'
 import { Pagination } from '@/components/Pagination'
+import {AppDispatch} from "@/lib/redux/store";
 
 export default function JobsPage() {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
         dispatch(fetchJobs(1))
